@@ -5,7 +5,7 @@ import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
 /**
- * Created by Tommy Ettinger on 9/11/2018.
+ * Stores information needed to describe and launch a stage of the tutorial, as a new window.
  */
 public class CustomConfig extends Lwjgl3ApplicationConfiguration {
     public String name;
