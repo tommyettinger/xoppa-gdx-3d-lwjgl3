@@ -147,6 +147,11 @@ public class Main extends ApplicationAdapter {
     }
 
     @Override
+    public void resize(int width, int height) {
+        stage.getViewport().update(width, height);
+    }
+    
+    @Override
     public void render() {
         super.render();
         Gdx.gl.glClearColor(0.05f, 0.05f, 0.05f, 1f);
