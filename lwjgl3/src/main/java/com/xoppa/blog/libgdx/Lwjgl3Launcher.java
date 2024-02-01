@@ -8,6 +8,9 @@ import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 /** Launches the desktop (LWJGL) application. */
 public class Lwjgl3Launcher {
     public static void main(String[] args) {
+        // Needed for macOS support, but also Windows with non-ASCII usernames.
+        if (StartupHelper.startNewJvmIfRequired(true)) return;
+
         createApplication();
     }
 

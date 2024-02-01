@@ -30,7 +30,7 @@ public class Main extends ApplicationAdapter {
         super.create();
         stage = new Stage();
         Skin skin = new Skin(Gdx.files.internal("skin/neon-ui.json"), new TextureAtlas("skin/neon-ui.atlas"));
-        choices = new SelectBox<CustomConfig>(skin);
+        choices = new SelectBox<>(skin);
         CustomConfig[] items = new CustomConfig[]{
             new CustomConfig("Basic 3D using libGDX, step 1: render a cube", 640, 480, com.xoppa.blog.libgdx.g3d.basic3d.step1.Basic3DTest.class),
             new CustomConfig("Basic 3D using libGDX, step 2: lights", 640, 480, com.xoppa.blog.libgdx.g3d.basic3d.step2.Basic3DTest.class),
@@ -139,11 +139,8 @@ public class Main extends ApplicationAdapter {
         table.add("Thanks to Raymond Buckley for the Neon skin.");
         table.row().colspan(2);
         table.add("https://ray3k.wordpress.com");
-//        table.pack();
         stage.addActor(table);
         Gdx.input.setInputProcessor(stage);
-        // use this during testing to auto-launch a demo
-//        ((Lwjgl3Application)Gdx.app).newWindow(WorldMapTextDemo.config.instantiate(), WorldMapTextDemo.config);
     }
 
     @Override

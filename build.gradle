@@ -10,13 +10,20 @@ buildscript {
   }
   dependencies {
 
-
   }
 }
 
 allprojects {
   apply plugin: 'eclipse'
   apply plugin: 'idea'
+
+  // This allows you to "Build and run using IntelliJ IDEA", an option in IDEA's Settings.
+  idea {
+    module {
+      outputDir file('build/classes/java/main')
+      testOutputDir file('build/classes/java/test')
+    }
+  }
 }
 
 configure(subprojects) {
@@ -34,7 +41,6 @@ subprojects {
     mavenCentral()
     maven { url 'https://s01.oss.sonatype.org' }
     mavenLocal()
-    gradlePluginPortal()
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
     maven { url 'https://jitpack.io' }
