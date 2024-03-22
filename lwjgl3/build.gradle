@@ -8,6 +8,9 @@ buildscript {
     if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_14)) {
       classpath "org.beryx:badass-runtime-plugin:1.13.0"
     }
+    if(enableGraalNative == 'true') {
+      classpath "org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin:0.9.28"
+    }
   }
 }
 if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_14)) {
@@ -21,10 +24,15 @@ sourceSets.main.resources.srcDirs += [ rootProject.file('assets').path ]
 mainClassName = 'com.xoppa.blog.libgdx.Lwjgl3Launcher'
 application.setMainClass(mainClassName)
 eclipse.project.name = appName + '-lwjgl3'
-java.sourceCompatibility = 1.8
+
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.targetCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
-  implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+  implementation ("com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"){
+    exclude group: "org.jcraft", module: "jorbis"
+    exclude group: "org.lwjgl", module: "lwjgl-openal"
+  }
   implementation "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop"
   implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
   implementation "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
@@ -104,4 +112,8 @@ if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_14)) {
 // Equivalent to the jar task; here for compatibility with gdx-setup.
 tasks.register('dist') {
   dependsOn 'jar'
+}
+
+if(enableGraalNative == 'true') {
+  apply from: file("nativeimage.gradle")
 }

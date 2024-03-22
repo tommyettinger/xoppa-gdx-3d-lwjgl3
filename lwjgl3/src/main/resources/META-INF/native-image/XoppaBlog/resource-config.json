@@ -1,0 +1,9 @@
+{
+  "resources":{
+  "includes":[
+    {
+      "pattern": ".*(\\Qinvader.png\\E|\\Qinvaderscene.g3db\\E|\\Qinvaderscene.g3dj\\E|\\Qship.png\\E|\\Qspace.jpg\\E|\\Qcarddeck.atlas\\E|\\Qcarddeck.png\\E|\\Qtest.fragment.glsl\\E|\\Qtest.vertex.glsl\\E|\\Qdefault.fnt\\E|\\Qdefault.png\\E|\\Qship.g3db\\E|\\Qship.mtl\\E|\\Qship.obj\\E|\\Qship.png\\E|\\Qblock.mtl\\E|\\Qblock.obj\\E|\\Qinvader.mtl\\E|\\Qinvader.obj\\E|\\Qinvader.png\\E|\\Qinvaders.g3db\\E|\\Qinvaderscene.g3db\\E|\\Qship.mtl\\E|\\Qship.obj\\E|\\Qship.png\\E|\\Qspace.jpg\\E|\\Qspacesphere.mtl\\E|\\Qspacesphere.obj\\E|\\Qfont-export.fnt\\E|\\Qfont-over-export.fnt\\E|\\Qfont-pressed-export.fnt\\E|\\Qneon-ui.atlas\\E|\\Qneon-ui.json\\E|\\Qneon-ui.png\\E|\\Qcolor.fragment.glsl\\E|\\Qcolor.vertex.glsl\\E|\\Qtest.fragment.glsl\\E|\\Qtest.vertex.glsl\\E|\\Quvcolor.fragment.glsl\\E|\\Quvcolor.vertex.glsl\\E|libgdx.+\\.png|lsans.+)"
+    }
+  ]},
+  "bundles":[]
+}
